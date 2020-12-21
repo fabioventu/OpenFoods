@@ -13,4 +13,10 @@ export class FoodService {
 
     return this.http.get(url, { headers });
   }
+  getItem(id: string) {
+    const url = `https://world.openfoodfacts.org/api/v0/product/${id}`;
+   const headers = new HttpHeaders();
+
+    return this.http.get(url, { headers });
+  }
 }
