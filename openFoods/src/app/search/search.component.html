@@ -1,1 +1,16 @@
-<p>search works!</p>
+<h1 class = "text-primary">Search</h1>
+<p>
+  <input type="text" #newquery>
+  <button class = "btn btn-outline-primary" (click)="submit(newquery)">Search</button>
+</p>
+<div class = 'card-columns'>
+<div *ngFor = "let prod of results.products">
+  <div class="card border-primary" style="width: 18rem;">
+  <img class="card-img-top" src="{{prod.image_small_url}}" alt="Card image cap">
+  <div class="card-body">
+    <a class="card-title" [routerLink]="['/item', prod.id]">{{prod.product_name_fr}}</a>
+  </div>
+  </div>
+
+</div>
+</div>
