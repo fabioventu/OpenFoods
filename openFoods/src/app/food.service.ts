@@ -7,16 +7,11 @@ export class FoodService {
 
 
   constructor(private http: HttpClient) {}
-  searchFood(query: string) {
-    const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${query}&page_size=5&json=true`;
+  getItem(breeds: string) {
+    const url = `https://api.thedogapi.com/v1/breeds/${breeds}`;
    const headers = new HttpHeaders();
 
     return this.http.get(url, { headers });
   }
-  getItem(id: string) {
-    const url = `https://world.openfoodfacts.org/api/v0/product/${id}`;
-   const headers = new HttpHeaders();
 
-    return this.http.get(url, { headers });
-  }
 }

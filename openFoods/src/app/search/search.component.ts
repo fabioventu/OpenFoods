@@ -26,7 +26,7 @@ export class SearchComponent {
       return;
     }
     this.query = query.value;
-    this.obsTrack = this.food.searchFood(this.query);
+    this.obsTrack = this.food.getItem(this.query);
     this.obsTrack.subscribe((data) => { this.results = data; console.log(this.results) });
   }
 
